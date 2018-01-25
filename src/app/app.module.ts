@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { MoviesComponent } from './movies/movies.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/shared-module';
 import { FormsModule } from '@angular/forms';
 import { MovieRowComponent } from './shared/movie-row/movie-row.component';
-
+import { SearchModule } from './search-module';
+import { MoviesService } from './shared/service/movies.service';
 
 
 @NgModule({
@@ -23,10 +23,10 @@ import { MovieRowComponent } from './shared/movie-row/movie-row.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
-    FormsModule
+    FormsModule,
+    SearchModule
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,9 @@
-
-<li class="list-group-item">{{ movieRow.name }}</li>
-<li class="list-group-item">{{ movieRow.director }}</li>
-<li class="list-group-item"><img src = "{{ movieRow.imageUrl }}"></li>
-<li class="list-group-item">{{ movieRow.duration }}</li>
-<li class="list-group-item">{{ movieRow.releaseDate }}</li>
-<li class="list-group-item">{{ movieRow.genres }}</li>
-
-<hr>
+  <img class="card-img-top" src="{{ movieRow.imageUrl }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ movieRow.name }}</h5>
+    <p class="card-text">{{ movieRow.director }}</p>
+    <p class="card-text">{{ movieRow.duration }}</p>
+    <p class="card-text">{{ movieRow.releaseDate }}</p>
+    <p class="card-text">{{ movieRow.genres }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>

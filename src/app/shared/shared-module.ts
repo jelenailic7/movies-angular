@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MoviesService } from './service/movies.service';
 
 
 
@@ -10,7 +9,7 @@ import { MoviesService } from './service/movies.service';
     imports: [
         CommonModule
     ],
-    providers: [ MoviesService ]
+    providers: [  ]
 
   })
 
