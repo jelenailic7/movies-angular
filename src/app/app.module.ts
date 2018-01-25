@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MovieRowComponent } from './shared/movie-row/movie-row.component';
 import { SearchModule } from './search-module';
-import { MoviesService } from './shared/service/movies.service';
+import { SharedModule } from './shared/shared-module';
 
 
 @NgModule({
@@ -24,9 +24,10 @@ import { MoviesService } from './shared/service/movies.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    SharedModule,
     SearchModule
   ],
-  providers: [MoviesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
