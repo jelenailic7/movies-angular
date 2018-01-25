@@ -1,8 +1,28 @@
 import { Injectable } from '@angular/core';
+import { movieList } from '../example/example';
+import { Movie } from '../models/movie';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable()
 export class MoviesService {
 
-  constructor() { }
+private movieList: Movie [];
+
+  constructor() {
+    this.movieList = movieList.map(movie => {
+      return new Movie(movie);
+      });
+   }
+
+  getMovies()
+  {
+      return new Observable((o: Observer<any>)=> {
+       o.next(movieList);
+       return o.complete();
+      });
+  //  return Observable.of(this.movieList);
+  }
+  
+
 
 }
