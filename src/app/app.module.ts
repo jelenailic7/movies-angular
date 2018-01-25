@@ -8,6 +8,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared-module';
 import { FormsModule } from '@angular/forms';
+import { MovieRowComponent } from './shared/movie-row/movie-row.component';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     LayoutComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieRowComponent
   ],
   imports: [
     BrowserModule,
