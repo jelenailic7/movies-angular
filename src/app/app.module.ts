@@ -18,6 +18,7 @@ import { MovieRowComponent } from './shared/movie-row/movie-row.component';
     LayoutComponent,
     MoviesComponent,
     MovieRowComponent
+
   ],
   imports: [
     BrowserModule,
