@@ -14,9 +14,9 @@ public selectedAll = false;
 public selectedAny = false;
 
 
-  constructor(private moviesService: MoviesService) { }
+constructor(private moviesService: MoviesService) { }
 
-  ngOnInit() {
+ngOnInit() {
     this.moviesService.getMovies().subscribe(data => {
      this.movies = data;
     });
@@ -24,12 +24,15 @@ public selectedAny = false;
 
   public onSelect(agreed:boolean){
     this.counter++;
+    this.selectedAny = true;
   }
   public selectAll(){
     this.counter = this.movies.length;
+    this.selectedAll = true;
   }
   public deselectAll(){
     this.counter = 0;
+    this.selectedAll = false;
   }
 
 }

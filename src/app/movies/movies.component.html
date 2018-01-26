@@ -1,6 +1,6 @@
 <div class= "container">
-    <button (click)="selectAll()" class="btn btn-primary" >Select all</button>
-    <button (click)="deselectAll()" class="btn btn-primary" >Deselect all</button>
+    <button (click)="selectAll()" (click)="selectedAll = true" class="btn btn-primary" >Select all</button>
+    <button (click)="deselectAll()" (click)="selectedAny = false" class="btn btn-primary" >Deselect all</button>
     <p>Trenutno je selektovano: {{ counter }} filmova</p>
   <div class="card" style="width: 18rem;" (onSelect)="onSelect($event)" *ngFor="let movie of movies" [movieRow]="movie">    
   </div>
