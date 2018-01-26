@@ -1,6 +1,8 @@
-import { Component, Injector } from '@angular/core';
+import { Component, Injector,OnInit } from '@angular/core';
 import { Movie } from '../../shared/models/movie';
 import { MoviesService } from '../../shared/service/movies.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router/';
 
 @Component({
   selector: 'app-search-page',
@@ -8,11 +10,26 @@ import { MoviesService } from '../../shared/service/movies.service';
 })
 export class SearchPageComponent  {
 
- private moviesService: MoviesService;
+ private movies=[];
+ 
 
-    constructor(private injector: Injector) {
-        this.moviesService = this.injector.get(MoviesService)
+    constructor(private route: ActivatedRoute, private router: Router, private moviesService: MoviesService) {
+
     }
 
- 
+ngOnInit() {
+    this.route.params.subscribe((params) => {
+        console.log(params);
+        this.moviesService.search(params["term"]).subscribe(data => {
+            this.movies=data;
+        },
+        (term) => {
+            alert('There are no movies with searched term: ' + term);
+
+            this.router.navigate(['/movies']);
+
+        });
+    });
+}
+    
 }

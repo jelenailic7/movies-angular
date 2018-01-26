@@ -7,12 +7,12 @@ import { Router } from '@angular/router';
 })
 
 export class SearchComponent  {
- searchName: string;
 
+private searchTerm;
     constructor(private router: Router)
     {}
 
-    searchMovie(){
-      this.router.navigate(['/movies']);
+   public searchMovie(){
+      this.router.navigate(['/search', this.searchTerm]);
     }
 }

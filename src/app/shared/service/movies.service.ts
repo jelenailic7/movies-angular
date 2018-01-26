@@ -20,16 +20,18 @@ private movieList: Movie [];
        o.next(movieList);
        return o.complete();
       });
-  //  return Observable.of(this.movieList);   
   }
- public searchMovie(term) {
-   let movies = [];
-   movies = this.movieList.filter((movie: Movie) => {
-     movie.name.toLocaleLowerCase().includes(term.toLocaleLowerCase());
+
+  public search(term): Observable<Movie[]> {
+  
+  const foundMovies = this.movieList.filter((movie: Movie) => {
+    return movie.name.toLowerCase().includes(term.toLowerCase());
    });
+   if(foundMovies.length === 0) {
+     return Observable.throw(term);
+   }
+  return Observable.of(foundMovies);
 
  }
   
-
-
 }
