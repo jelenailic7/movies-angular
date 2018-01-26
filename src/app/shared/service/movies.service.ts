@@ -14,14 +14,21 @@ private movieList: Movie [];
       });
    }
 
-  getMovies()
+ public getMovies()
   {
       return new Observable((o: Observer<any>)=> {
        o.next(movieList);
        return o.complete();
       });
-  //  return Observable.of(this.movieList);
+  //  return Observable.of(this.movieList);   
   }
+ public searchMovie(term) {
+   let movies = [];
+   movies = this.movieList.filter((movie: Movie) => {
+     movie.name.toLocaleLowerCase().includes(term.toLocaleLowerCase());
+   });
+
+ }
   
 
 

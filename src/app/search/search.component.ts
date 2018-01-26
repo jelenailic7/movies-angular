@@ -8,9 +8,14 @@ import { Router } from '@angular/router';
   templateUrl: './search.component.html'
 })
 export class SearchComponent  {
-    
-    constructor()
+
+ searchTerm: string;
+
+    constructor(private router: Router) {
+    }
+
+    public searchMovie()
     {
-        this.router.navigate('/movies');
+        this.router.navigate(['/movies']);
     }
 }
