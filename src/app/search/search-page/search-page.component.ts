@@ -19,7 +19,6 @@ export class SearchPageComponent  {
 
 ngOnInit() {
     this.route.params.subscribe((params) => {
-        console.log(params);
         this.moviesService.search(params["term"]).subscribe(data => {
             this.movies=data;
         },

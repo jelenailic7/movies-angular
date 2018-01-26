@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class SearchComponent  {
 
 private searchTerm;
+
     constructor(private router: Router)
     {}
 

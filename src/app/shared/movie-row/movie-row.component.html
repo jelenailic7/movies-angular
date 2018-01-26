@@ -5,6 +5,5 @@
     <p class="card-text">{{ movieRow.duration }}</p>
     <p class="card-text">{{ movieRow.releaseDate }}</p>
     <p class="card-text">{{ movieRow.genres }}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    <button type="select">Select</button>
+    <button (click)="select(true)" class="btn btn-primary" [disabled]="selected">Select</button>
   </div>
