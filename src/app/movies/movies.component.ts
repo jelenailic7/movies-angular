@@ -12,6 +12,10 @@ public counter = 0;
 private movies;
 public selectedAll = false;
 public selectedAny = false;
+public order = 'name';
+public reverse = false;
+
+
 
 
 constructor(private moviesService: MoviesService) { }
@@ -34,9 +38,17 @@ ngOnInit() {
     this.counter = 0;
     this.selectedAll = false;
   }
+  public setOrder(value: string) {
+    if (this.order === value) {
+        this.reverse = !this.reverse;
+    }
+    this.order = value;
+}
+
 
 }
 
 
-
+//https://www.npmjs.com/package/ng2-order-pipe
+//https://www.npmjs.com/package/ngx-pagination
 

@@ -8,7 +8,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchModule } from './search-module';
 import { SharedModule } from './shared/shared-module';
-
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { SharedModule } from './shared/shared-module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    SearchModule
+    SearchModule,
+    Ng2OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
