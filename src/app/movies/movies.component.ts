@@ -35,11 +35,11 @@ ngOnInit() {
 
   public selectAll() {
     this.counter = this.movies.length;
+    this.selectedAny = false;
  
   }
   public deselectAll() {
     this.counter = 0;
-    this.selectedAny = false;
    
   }
 
