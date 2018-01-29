@@ -1,6 +1,6 @@
 <div class= "container">
-    <button (click)="selectAll()" (click)="selectedAll = true"  class="btn btn-primary"> Select all</button>
-    <button (click)="deselectAll()"  (click)="selectedAll = false; selectedAny = false"   class="btn btn-primary" >Deselect all</button>
+    <button (click)="selectAll()" (click)="selectedAll = true"  class="btn btn-primary" [disabled]="selectedAll"> Select all</button>
+    <button (click)="deselectAll()"  (click)="selectedAll = false; selectedAny = false" [disabled]="!selectedAll && !selectedAny" class="btn btn-primary" >Deselect all</button>
     <button  class="btn btn-primary" (click)="setOrder('name')"  [class.active]="order === 'name'">Sort by Name asc</button>
     <button  class="btn btn-primary"  (click)="setOrder('duration')" [class.active]="order === 'duration'">Sort by Duration asc</button>
 
