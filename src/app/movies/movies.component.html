@@ -1,6 +1,6 @@
 <div class= "container">
-    <button (click)="selectAll()" (click)="selectedAll = true; selected = true"  class="btn btn-primary"> Select all</button>
-    <button (click)="deselectAll()"  (click)="selectedAll = false; selected = false"   class="btn btn-primary" >Deselect all</button>
+    <button (click)="selectAll()" (click)="selectedAll = true"  class="btn btn-primary"> Select all</button>
+    <button (click)="deselectAll()"  (click)="selectedAll = false"   class="btn btn-primary" >Deselect all</button>
     <button  class="btn btn-primary" (click)="setOrder('name')"  [class.active]="order === 'name'">Sort by Name asc</button>
     <button  class="btn btn-primary"  (click)="setOrder('duration')" [class.active]="order === 'duration'">Sort by Duration asc</button>
 
@@ -9,7 +9,7 @@
    (onSelect)="onSelect($event)" 
    [movieRow]="movie" 
    [selectedAll] = "selectedAll"
-   [selected]="selected" >
+   [selectedAny]="selectedAny">
    </div>
    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

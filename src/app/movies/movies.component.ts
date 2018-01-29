@@ -15,9 +15,9 @@ public counter = 0;
 private movies;
 public selectedAll;
 public selectedAny;
-public order = 'name';
 public reverse = false;
-
+public selected;
+public order;
 p: number = 1;
 
 constructor(private moviesService: MoviesService) { }
@@ -30,16 +30,17 @@ ngOnInit() {
 
   public onSelect(agreed:boolean){
     this.counter++;
-  
+    this.selectedAny = true;   
   }
 
   public selectAll() {
     this.counter = this.movies.length;
- ;
+ 
   }
   public deselectAll() {
     this.counter = 0;
- 
+    this.selectedAny = false;
+   
   }
 
   public setOrder(value: string) {

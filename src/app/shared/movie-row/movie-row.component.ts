@@ -9,8 +9,9 @@ export class MovieRowComponent implements OnInit {
 
 @Input() movieRow: Movie;
 @Output() onSelect = new EventEmitter<boolean>();
-@Input() selected : boolean;
+public selected = false;
 @Input() selectedAll: boolean;
+@Input() selectedAny:boolean;
 
   constructor() { }
 
@@ -23,16 +24,8 @@ public select(agreed:boolean){
   }
 
   ngOnChanges() {
-    if(this.selectedAll){
-      this.selected = true;
-    } else {
-      if(!this.selectedAll){
-        this.selected = false;
-
-      }
+     if (this.selectedAny === false) { 
+          this.selected = this.selectedAll; 
     }
   }
-
 }
-
-//parent moze da menja stanje u child komponenti?
