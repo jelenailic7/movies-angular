@@ -18,8 +18,7 @@ public selectedAny;
 public order = 'name';
 public reverse = false;
 
-
-
+p: number = 1;
 
 constructor(private moviesService: MoviesService) { }
 

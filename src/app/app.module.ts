@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SearchModule } from './search-module';
 import { SharedModule } from './shared/shared-module';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     AppRoutingModule,
     SharedModule,
     SearchModule,
-    Ng2OrderModule
+    Ng2OrderModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
