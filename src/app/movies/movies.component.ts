@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../shared/models/movie';
 import { MoviesService } from '../shared/service/movies.service';
+import { MovieRowComponent } from '../shared/movie-row/movie-row.component';
+
 
 @Component({
   selector: 'app-movies',
-  templateUrl: './movies.component.html'
+  templateUrl: './movies.component.html',
 })
+
 export class MoviesComponent implements OnInit {
 
 public counter = 0;
 private movies;
-public selectedAll = false;
-public selectedAny = false;
+public selectedAll;
+public selectedAny;
 public order = 'name';
 public reverse = false;
 
@@ -28,23 +31,24 @@ ngOnInit() {
 
   public onSelect(agreed:boolean){
     this.counter++;
-    this.selectedAny = true;
+  
   }
-  public selectAll(){
+
+  public selectAll() {
     this.counter = this.movies.length;
-    this.selectedAll = true;
+ ;
   }
-  public deselectAll(){
+  public deselectAll() {
     this.counter = 0;
-    this.selectedAll = false;
+ 
   }
+
   public setOrder(value: string) {
     if (this.order === value) {
         this.reverse = !this.reverse;
     }
     this.order = value;
 }
-
 
 }
 

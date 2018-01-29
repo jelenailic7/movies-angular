@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter,OnChanges } from '@angular/core';
 import { Movie } from '../models/movie';
 
 @Component({
@@ -9,17 +9,30 @@ export class MovieRowComponent implements OnInit {
 
 @Input() movieRow: Movie;
 @Output() onSelect = new EventEmitter<boolean>();
-
-private selected = false;
+@Input() selected : boolean;
+@Input() selectedAll: boolean;
 
   constructor() { }
 
-select(agreed:boolean){ 
+public select(agreed:boolean){ 
   this.onSelect.emit(agreed);
     this.selected = true;
-
 }
+
   ngOnInit() {
   }
 
+  ngOnChanges() {
+    if(this.selectedAll){
+      this.selected = true;
+    } else {
+      if(!this.selectedAll){
+        this.selected = false;
+
+      }
+    }
+  }
+
 }
+
+//parent moze da menja stanje u child komponenti?

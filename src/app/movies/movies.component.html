@@ -1,12 +1,16 @@
 <div class= "container">
-    <button (click)="selectAll()" (click)="selectedAll = true" class="btn btn-primary" >Select all</button>
-    <button (click)="deselectAll()" (click)="selectedAny = false" class="btn btn-primary" >Deselect all</button>
+    <button (click)="selectAll()" (click)="selectedAll = true; selected = true"  class="btn btn-primary"> Select all</button>
+    <button (click)="deselectAll()"  (click)="selectedAll = false; selected = false"   class="btn btn-primary" >Deselect all</button>
     <button  class="btn btn-primary" (click)="setOrder('name')"  [class.active]="order === 'name'">Sort by Name asc</button>
     <button  class="btn btn-primary"  (click)="setOrder('duration')" [class.active]="order === 'duration'">Sort by Duration asc</button>
 
     <p>Trenutno je selektovano: {{ counter }} filmova</p>
-  <div class="card" style="width: 18rem;" (onSelect)="onSelect($event)" *ngFor="let movie of movies | orderBy: order: reverse" [movieRow]="movie">    
-  </div>
+   <div class="card" style="width: 18rem;" *ngFor="let movie of movies | orderBy: order: reverse" 
+   (onSelect)="onSelect($event)" 
+   [movieRow]="movie" 
+   [selectedAll] = "selectedAll"
+   [selected]="selected" >
+   </div>
 </div>
 
 
